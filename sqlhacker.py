@@ -76,8 +76,10 @@ for line in rules:
     # print content2
     len2 = len(content2)
     if (len1 != contentLength) and (len2 == contentLength):
-        payload = urllib.unquote(baseUrl + line)
-        payloads.append(payload)
+        baseUrl = urllib.unquote(baseUrl)
+        line = urllib.unquote(line)
+        payload = baseUrl + line
+        payloads.append(line)
         counter += 1
         print payload
 print "----------------------"
